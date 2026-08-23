@@ -62,12 +62,12 @@ A Python-based dashboard receives the STM32 data through UART and provides a rea
 The EV model calculates vehicle behaviour based on accelerator and brake inputs.
 
 The system calculates:
-Motor torque
-Vehicle speed
-Mechanical power
-Battery SOC
-Estimated driving range
-Motor temperature
+- Motor torque
+- Vehicle speed
+- Mechanical power
+- Battery SOC
+- Estimated driving range
+- Motor temperature
 
 The vehicle supports three drive modes:
 ```
@@ -117,18 +117,18 @@ Estimated Range
 
 The ADAS module uses three ultrasonic sensors:
 
-Front
-Left
-Right
+- Front
+- Left
+- Right
 
 The system calculates obstacle distance and Time-to-Collision (TTC).
 
 ADAS functions include:
 
-Forward Collision Warning
-Critical collision detection
-Blind Spot Detection
-TTC monitoring
+- Forward Collision Warning
+- Critical collision detection
+- Blind Spot Detection
+- TTC monitoring
 
 The system generates warnings based on configurable thresholds.
 
@@ -138,9 +138,9 @@ The fault management module monitors critical vehicle conditions.
 
 Fault conditions include:
 
-Motor over-temperature
-Critically low battery SOC
-Critical collision condition
+- Motor over-temperature
+- Critically low battery SOC
+- Critical collision condition
 
 The system maintains a fault bitmask and an overall fault state.
 
@@ -183,17 +183,17 @@ This allows the EV model to respond differently depending on the current operati
 
 The STM32 ADC is used for simulated vehicle inputs.
 
-Input	STM32 Pin
-Accelerator	PA0
-Brake	PA1
-SOC	PA2
-Motor Temperature	PA3
+- Input	STM32 Pin
+- Accelerator	PA0
+- Brake	PA1
+- SOC	PA2
+- Motor Temperature	PA3
 
 Ultrasonic sensors provide:
 
-FRONT distance
-LEFT distance
-RIGHT distance
+- FRONT distance
+- LEFT distance
+- RIGHT distance
 
 ## Python Dashboard
 
@@ -201,41 +201,41 @@ The Python dashboard communicates with the STM32 through UART.
 
 It displays:
 
-Real-time speedometer
-Battery SOC
-Estimated range
-Drive mode
-Motor torque
-Accelerator percentage
-Brake percentage
-Motor temperature
-Alarm status
-Fault status
-UART signal status
-Speed history
-ADAS bird's-eye view
-Obstacle distances
-TTC
+- Real-time speedometer
+- Battery SOC
+- Estimated range
+- Drive mode
+- Motor torque
+- Accelerator percentage
+- Brake percentage
+- Motor temperature
+- Alarm status
+- Fault status
+- UART signal status
+- Speed history
+- ADAS bird's-eye view
+- Obstacle distances
+- TTC
 
 The dashboard provides a visual representation of the vehicle's current state while the simulation is running.
 
 ## Hardware / Software
-Hardware
-STM32F103C8T6 Blue Pill
-Ultrasonic sensors
-Simulated accelerator input
-Simulated brake input
-LEDs for status indication
-Buzzer
-PICSimLab
-## Software
-STM32CubeIDE
-STM32CubeMX
-PICSimLab
-C / Embedded C
-Python
-Matplotlib
-PySerial
+### Hardware
+- STM32F103C8T6 Blue Pill
+- Ultrasonic sensors
+- Simulated accelerator input
+- Simulated brake input
+- LEDs for status indication
+- Buzzer
+- PICSimLab
+### Software
+- STM32CubeIDE
+- STM32CubeMX
+- PICSimLab
+- C / Embedded C
+- Python
+- Matplotlib
+- PySerial
 
 ## PROJECT STRUCTURE
 ```
@@ -266,12 +266,12 @@ EV-ADAS-SYSTEM-STM32/
 └── STM32F103C8TX_FLASH.ld
 ```
 ## Running the STM32 Simulation
-Open the project in STM32CubeIDE.
-Build the project.
-Program/run the STM32 Blue Pill configuration in PICSimLab.
-Start the UART communication.
-Note the COM port assigned to the simulation.
-Running the Dashboard
+- Open the project in STM32CubeIDE.
+- Build the project.
+- Program/run the STM32 Blue Pill configuration in PICSimLab.
+- Start the UART communication.
+- Note the COM port assigned to the simulation.
+- Running the Dashboard
 
 Create/activate the Python virtual environment and install the required packages.
 ```
@@ -290,32 +290,32 @@ The dashboard will then receive the vehicle telemetry from the STM32 through UAR
 The system can be tested under different operating conditions:
 
 ## EV Control
-Accelerator variation
-Brake application
-ECO mode
-NORMAL mode
-SPORT mode
-Different vehicle speeds
-Battery
-Normal SOC operation
-Low SOC condition
-SOC discharge during acceleration
-SOC increase during regenerative braking
-Range estimation
+- Accelerator variation
+- Brake application
+- ECO mode
+- NORMAL mode
+- SPORT mode
+- Different vehicle speeds
+- Battery
+- Normal SOC operation
+- Low SOC condition
+- SOC discharge during acceleration
+- SOC increase during regenerative braking
+- Range estimation
 ## ADAS
-Safe obstacle distance
-Warning distance
-Critical collision distance
-Different vehicle speeds
-Left/right obstacle detection
-TTC changes
-Fault System
-Motor over-temperature
-Critical SOC
-Critical collision
-Fault indication
-Vehicle response during fault
-Purpose
+- Safe obstacle distance
+- Warning distance
+- Critical collision distance
+- Different vehicle speeds
+- Left/right obstacle detection
+- TTC changes
+- Fault System
+- Motor over-temperature
+- Critical SOC
+- Critical collision
+- Fault indication
+- Vehicle response during fault
+## Purpose
 
 This project demonstrates how EV control, ADAS, sensor processing, fault management, and real-time monitoring can be integrated into a single embedded system.
 
@@ -325,14 +325,14 @@ It is intended as a simulation and learning platform for EV embedded control and
 
 Possible extensions include:
 
-CAN communication
-More accurate EV motor and battery models
-Real vehicle sensors
-Improved SOC estimation
-More advanced collision prediction
-Additional ADAS functions
-Hardware deployment on an actual EV platform
-Data logging and analysis
+- CAN communication
+- More accurate EV motor and battery models
+- Real vehicle sensors
+- Improved SOC estimation
+- More advanced collision prediction
+- Additional ADAS functions
+- Hardware deployment on an actual EV platform
+- Data logging and analysis
 
 
 ## Author 
